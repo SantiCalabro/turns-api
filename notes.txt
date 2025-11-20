@@ -1,0 +1,25 @@
+1- npm init > Para inicializar package.json y poder instalar todo.
+2- Crear una carpeta ./src
+3- Instalaciones: 
+npm install --save-dev typescript @types/express @types/node nodemon ts-node express
+npm i -D morgan dotenv reflect-metadata typeorm pg prettier
+
+4- tsc --init > Para habilitar el archivo tsconfig.json
+    Habilitar
+        Outdir
+        RootDir -> Código fuente , llevar a ./src
+
+    Agregar
+        include -> Cuándo TS haga el build para crear la carpeta dist, qué módulos son los que tiene que buscar y explorar. Antes solo teníamos index.ts. 
+        "include":["src/**/*.ts] ---> dentro de src, cualquier carpeta que exista, cualquier archivo con extensión ts. 
+        "exclude": ["node_modules]
+
+5- Agregar archivo nodemon.json para hacer al watcher más general y que no se limite solo a index.ts
+6- Agregar estos scripts al package.json
+   "build": "tsc",
+    "start": "nodemon ./src/index.ts"
+7- Crear carpeta ./src/routes/index.ts e importar el Router (interface de Express)
+8- Crear archivo ./src/server.ts para importar express y crear el servidor. 
+9- archivo ./config/data-source.ts
+10- Crear archivo indext.ts e inicializar la App importando el servidor recién creado (función asíncrona)
+11- Crear base de datos
